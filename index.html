@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Glow & Glam — Belleza que Inspira</title>
+  <meta name="description" content="Glow & Glam: ofertas irresistibles en maquillaje, combos exclusivos y asesoría personalizada." />
+  <style>
+    :root{
+      --accent:#ff4da6;
+      --accent-2:#ffb86b;
+      --dark:#0f1724;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.08);
+      --shadow: 0 8px 24px rgba(15,23,36,0.18);
+      --radius:14px;
+      font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#0f1724 0%, #1b2330 50%, #2b3340 100%);
+      color: #fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    /* Header */
+    header{
+      padding:28px 6%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      position:sticky;
+      top:0;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(90deg, rgba(15,23,36,0.45), rgba(15,23,36,0.25));
+      z-index:40;
+      border-bottom:1px solid rgba(255,255,255,0.04);
+    }
+
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background: conic-gradient(from 180deg at 50% 50%, var(--accent), var(--accent-2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#111;
+      box-shadow: 0 6px 18px rgba(255,77,166,0.14);
+      border: 2px solid rgba(255,255,255,0.06);
+    }
+    .brand h1{font-size:18px;margin:0}
+    .brand p{margin:0;font-size:12px;color:var(--muted);}
+
+    nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      margin-left:auto;
+    }
+    nav a{
+      color:#f8f9fb;
+      text-decoration:none;
+      font-weight:600;
+      padding:8px 12px;
+      border-radius:10px;
+      transition:all .18s ease;
+      font-size:14px;
+    }
+    nav a:hover{transform:translateY(-3px); background:rgba(255,255,255,0.03)}
+
+    .cta{
+      background: linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#111;
+      padding:10px 16px;
+      border-radius:12px;
+      font-weight:700;
+      box-shadow:0 8px 24px rgba(255,77,166,0.16);
+      border: none;
+      cursor: pointer;
+    }
+
+    main{padding:34px 6%; display:grid; gap:28px; max-width:1200px; margin:0 auto;}
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:stretch;
+    }
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .hero h2{font-size:28px;margin:0 0 8px 0; color: #fff}
+    .hero p{color:var(--muted); margin:0 0 18px 0}
+    .hero .promo{
+      display:flex; gap:12px; align-items:center; margin-top:8px;
+    }
+    .badge{
+      background: rgba(255,255,255,0.06);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--accent-2);
+      font-weight:700;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    /* Right column hero (promo + form) */
+    .promo-panel{
+      padding:20px;
+      border-radius:12px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      justify-content:center;
+    }
+    .price{
+      font-size:24px;
+      font-weight:800;
+      color:var(--accent-2);
+    }
+    .small-muted{font-size:13px;color:var(--muted)}
+
+    /* Cards grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:18px;
+    }
+    .card{
+      background:var(--card);
+      color:#111;
+      border-radius:12px;
+      padding:16px;
+      box-shadow: 0 8px 20px rgba(11,17,22,0.12);
+      border:1px solid rgba(0,0,0,0.04);
+      overflow:hidden;
+    }
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+    .card h3{margin:12px 0 6px 0}
+    .card p{margin:0;color:#555}
+
+    /* Combos & Offers */
+    .combo{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .combo .info{flex:1}
+    .tag{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#111;
+      padding:8px 10px;
+      border-radius:10px;
+      font-weight:800;
+    }
+
+    /* Formularios */
+    .form{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    input[type="text"], input[type="email"], textarea, select{
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid rgba(15,23,36,0.06);
+      font-size:14px;
+      outline:none;
+    }
+    textarea{min-height:90px; resize:vertical}
+    .row{display:flex;gap:10px}
+    .row .col{flex:1}
+
+    /* Radio buttons custom */
+    .radio-group{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .radio{
+      display:flex; align-items:center; gap:8px;
+      padding:8px 10px; border-radius:10px; cursor:pointer;
+      border:1px solid rgba(15,23,36,0.06); background:#fff;
+    }
+    .radio input{display:none}
+    .radio .dot{
+      width:18px; height:18px; border-radius:50%; border:2px solid #ddd; display:inline-block;
+      transition:all .12s ease;
+      background:transparent;
+    }
+    .radio input:checked + .dot{ background: radial-gradient(circle at 40% 35%, var(--accent) 0%, var(--accent-2) 60%); border-color:transparent; box-shadow:0 4px 12px rgba(255,77,166,0.18)}
+
+    /* Range slider (slide bar) */
+    .range-wrap{display:flex; align-items:center; gap:14px}
+    input[type="range"]{
+      -webkit-appearance:none;
+      appearance:none;
+      height:6px;
+      background: linear-gradient(90deg,var(--accent),var(--accent-2));
+      border-radius:10px;
+      outline:none;
+      flex:1;
+    }
+    input[type="range"]::-webkit-slider-thumb{
+      -webkit-appearance:none;
+      width:22px; height:22px; border-radius:50%;
+      background: #fff; border: 4px solid var(--accent);
+      box-shadow: 0 6px 18px rgba(255,77,166,0.14);
+    }
+
+    /* Footer */
+    footer{
+      margin-top:18px;
+      padding:28px 6%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-top:1px solid rgba(255,255,255,0.03);
+      color:var(--muted);
+      display:flex;
+      gap:18px;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .socials{display:flex;gap:12px}
+    .socials a{
+      width:42px; height:42px; display:inline-flex; align-items:center; justify-content:center;
+      border-radius:10px; background:rgba(255,255,255,0.02); color:#fff; text-decoration:none;
+    }
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .card img{height:140px}
+    }
+    @media (max-width:640px){
+      nav{display:none}
+      .grid{grid-template-columns:1fr}
+      header{padding:18px}
+      .brand h1{font-size:16px}
+      .hero-card{padding:18px}
+    }
+
+    /* Persuasive highlight */
+    .highlight{
+      background: linear-gradient(90deg, rgba(255,77,166,0.10), rgba(255,184,107,0.06));
+      padding:10px 14px;
+      border-radius:10px;
+      color:var(--accent-2);
+      font-weight:700;
+      display:inline-block;
+    }
+
+    /* Tiny helpers */
+    .muted{color:var(--muted)}
+    .btn-ghost{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.06);
+      padding:8px 12px;border-radius:10px; cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true">G&G</div>
+      <div>
+        <h1>Glow & Glam</h1>
+        <p>Maquillaje · Tendencias · Combos</p>
+      </div>
+    </div>
+
+    <nav aria-label="Navegación principal">
+      <a href="#ofertas">Ofertas</a>
+      <a href="#combos">Combos</a>
+      <a href="#asesoria">Asesoría</a>
+      <a href="#contacto">Contacto</a>
+      <button class="cta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Reserva tu look</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-card">
+        <h2 id="hero-title">Resalta tu belleza. Descubre tu mejor versión.</h2>
+        <p>En Glow & Glam combinamos productos premium con asesoría experta para que cada look cuente. Promociones por tiempo limitado y combos pensados para todas las ocasiones.</p>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap">
+          <div class="badge">Envío gratis a partir de $50</div>
+          <div class="badge">10% descuento en tu primera compra</div>
+          <div class="highlight">Edición Primavera — ¡Surtido limitado!</div>
+        </div>
+
+        <hr style="margin:18px 0; border-color:rgba(255,255,255,0.03)"/>
+
+        <h3 style="margin:0 0 8px 0">Combina, ahorra, sorprende</h3>
+        <p class="muted">Explora nuestros combos curados por maquilladores profesionales. Desde kits básicos hasta colecciones para eventos especiales.</p>
+
+        <!-- Cards de productos -->
+        <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
+          <div class="card" style="width:calc(33% - 8px); min-width:160px;">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8bde8b16d8e2f5ee4b5f8e3b6f8e0a24" alt="Paleta de sombras">
+            <h3>Paleta Aurora</h3>
+            <p>Sombras sedosas con pigmento intenso. Ideal para looks de día y noche.</p>
+          </div>
+          <div class="card" style="width:calc(33% - 8px); min-width:160px;">
+            <img src="https://images.unsplash.com/photo-1580229551956-1d06b6c0d4f1?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=573d2b1b2a3f6b1e4a8d9b3e2b2d2f9a" alt="Base y brocha">
+            <h3>Base Perfect Skin</h3>
+            <p>Textura ligera, alta cobertura y acabado luminoso.</p>
+          </div>
+          <div class="card" style="width:calc(33% - 8px); min-width:160px;">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3a6a7f6d6f6a6b6c6d7e8f9a0b1c2d3e" alt="Labiales">
+            <h3>Trío de Labiales</h3>
+            <p>Fórmula hidratante de larga duración con tonos infalibles.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel de promoción + formulario corto -->
+      <aside class="promo-panel" aria-labelledby="promo-title">
+        <div>
+          <h3 id="promo-title" style="margin:0">Pack Primavera — 25% OFF</h3>
+          <p class="small-muted" style="margin:6px 0 0 0">Incluye: paleta Aurora + base Perfect Skin + brocha profesional</p>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div class="price">$49.99</div>
+            <div class="small-muted">Antes $66.65 — Ahorra $16.66</div>
+          </div>
+          <div>
+            <button class="cta" onclick="addToCart()">Agregar al carrito</button>
+          </div>
+        </div>
+
+        <form id="mini-contact" class="form" onsubmit="event.preventDefault(); subscribeMini()">
+          <label class="small-muted">Reserva tu pack y recibe asesoría gratis</label>
+          <input type="text" id="nombre-mini" placeholder="Tu nombre" required />
+          <input type="email" id="email-mini" placeholder="Email" required />
+          <div style="display:flex;gap:8px">
+            <button type="submit" class="cta" style="flex:1">Reservar ahora</button>
+            <button type="button" class="btn-ghost" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Más info</button>
+          </div>
+        </form>
+      </aside>
+    </section>
+
+    <!-- SECCION DE PROMOCIONES Y COMBOS -->
+    <section id="ofertas" aria-labelledby="ofertas-title" style="display:grid;gap:16px">
+      <div style="display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap">
+        <div>
+          <h2 id="ofertas-title" style="margin:0">Ofertas irresistibles</h2>
+          <p class="muted" style="margin:6px 0 0 0">Promociones por temporada, combos exclusivos y regalos por compra.</p>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button class="btn-ghost" onclick="toggleSaleFilter()">Solo combos</button>
+          <div class="muted">Ordenar:</div>
+          <select onchange="filterSort(this.value)">
+            <option value="popular">Popularidad</option>
+            <option value="precio">Precio</option>
+            <option value="nuevo">Nuevos</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1592878903976-ee7d9b3f7f2f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1192c7c7c8c9c0b6d5e6f7a8e9f0a1b2" alt="Combo 1">
+          <h3>Combo Noche Glam</h3>
+          <p class="muted">Paleta + delineador líquido + fijador de maquillaje.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <div style="font-weight:800;color:#1f2937">$39.99</div>
+            <button class="btn-ghost" onclick="addToCart('Combo Noche Glam')">Agregar</button>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c" alt="Combo 2">
+          <h3>Kit Novia</h3>
+          <p class="muted">Incluye base, corrector, paleta y spray fijador — prueba gratuita de look en tienda.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <div style="font-weight:800;color:#1f2937">$129.00</div>
+            <button class="btn-ghost" onclick="addToCart('Kit Novia')">Agregar</button>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d" alt="Combo 3">
+          <h3>Essentials Diario</h3>
+          <p class="muted">Brocha, corrector ligero y bálsamo con color.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <div style="font-weight:800;color:#1f2937">$24.50</div>
+            <button class="btn-ghost" onclick="addToCart('Essentials Diario')">Agregar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Asesoría con radio buttons y slider -->
+    <section id="asesoria" aria-labelledby="asesoria-title" style="display:grid;gap:12px">
+      <h2 id="asesoria-title">Asesoría personalizada</h2>
+      <p class="muted">Dinos tu estilo preferido y rango de presupuesto para recomendarte el combo ideal.</p>
+
+      <div style="display:grid;grid-template-columns: 1fr 360px; gap:16px; align-items:start;">
+        <div class="card">
+          <h3 style="margin-top:0">Elige tu estilo</h3>
+          <div class="radio-group" role="radiogroup" aria-label="Estilos">
+            <label class="radio" title="Natural">
+              <input type="radio" name="estilo" value="natural" checked onchange="updateEstilo()" />
+              <span class="dot"></span>
+              Natural
+            </label>
+            <label class="radio" title="Glam">
+              <input type="radio" name="estilo" value="glam" onchange="updateEstilo()" />
+              <span class="dot"></span>
+              Glam
+            </label>
+            <label class="radio" title="Romántico">
+              <input type="radio" name="estilo" value="romantico" onchange="updateEstilo()" />
+              <span class="dot"></span>
+              Romántico
+            </label>
+            <label class="radio" title="Editorial">
+              <input type="radio" name="estilo" value="editorial" onchange="updateEstilo()" />
+              <span class="dot"></span>
+              Editorial
+            </label>
+          </div>
+
+          <hr style="margin:12px 0; border-color:rgba(0,0,0,0.05)"/>
+
+          <h3 style="margin:0 0 8px 0">Rango de presupuesto</h3>
+          <div class="card" style="padding:12px; background:linear-gradient(90deg, rgba(255,255,255,0.98), #fff); color:#111">
+            <div class="range-wrap">
+              <span class="small-muted">$</span>
+              <input id="budget" type="range" min="10" max="200" step="1" value="50" oninput="updateBudget(this.value)" />
+              <strong id="budget-value">$50</strong>
+            </div>
+            <p class="muted" style="margin:8px 0 0 0">Arrastra para ajustar. Te mostraremos combos dentro de este rango.</p>
+          </div>
+
+          <div style="display:flex;gap:10px;margin-top:12px">
+            <button class="cta" onclick="getRecommendation()">Ver recomendaciones</button>
+            <button class="btn-ghost" onclick="openCalculator()">Calculadora rápida</button>
+          </div>
+        </div>
+
+        <aside class="card" id="reco" style="min-height:180px;">
+          <h3 style="margin-top:0">Recomendación</h3>
+          <p class="muted" id="reco-text">Selecciona un estilo y ajusta tu presupuesto para ver recomendaciones aquí.</p>
+          <div id="reco-list" style="margin-top:10px;display:grid;gap:8px"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Contacto / Formulario completo -->
+    <section id="contacto" aria-labelledby="contacto-title" style="margin-top:8px">
+      <h2 id="contacto-title">Contacto & Reserva</h2>
+      <p class="muted">Rellena el formulario y nuestro equipo te contactará en menos de 24 horas.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 360px; gap:16px; margin-top:12px">
+        <form id="main-form" class="card form" onsubmit="event.preventDefault(); submitForm()">
+          <div class="row">
+            <div class="col"><input type="text" id="nombre" placeholder="Nombre completo" required></div>
+            <div class="col"><input type="email" id="email" placeholder="Correo electrónico" required></div>
+          </div>
+
+          <div class="row">
+            <div class="col"><input type="text" id="telefono" placeholder="Teléfono / WhatsApp" required></div>
+            <div class="col">
+              <select id="servicio" required>
+                <option value="">Elige un servicio...</option>
+                <option value="asesoria">Asesoría personalizada</option>
+                <option value="evento">Maquillaje para evento</option>
+                <option value="curso">Curso express</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="small-muted">Preferencia de horario</label>
+          <div class="radio-group">
+            <label class="radio"><input type="radio" name="horario" value="manana" checked><span class="dot"></span> Mañana</label>
+            <label class="radio"><input type="radio" name="horario" value="tarde"><span class="dot"></span> Tarde</label>
+            <label class="radio"><input type="radio" name="horario" value="noche"><span class="dot"></span> Noche</label>
+          </div>
+
+          <label class="small-muted" style="margin-top:6px">¿Qué buscas?</label>
+          <textarea id="mensaje" placeholder="Cuéntanos tu ocasión, tono de piel o referencias..."></textarea>
+
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="cta" type="submit">Enviar solicitud</button>
+            <button class="btn-ghost" type="button" onclick="document.getElementById('main-form').reset()">Limpiar</button>
+            <div style="margin-left:auto" class="small-muted">Protegemos tus datos</div>
+          </div>
+        </form>
+
+        <aside class="card">
+          <h3 style="margin-top:0">Promociones especiales</h3>
+          <ul style="padding-left:18px;color:#444;margin:0">
+            <li style="margin:10px 0"><strong>2x1</strong> en labiales selectos (fin de semana)</li>
+            <li style="margin:10px 0"><strong>Prueba de look</strong> gratuita al comprar Kit Novia</li>
+            <li style="margin:10px 0"><strong>Suscríbete</strong> y obtén 10% en tu primera compra</li>
+          </ul>
+
+          <hr style="margin:12px 0; border-color:rgba(0,0,0,0.05)"/>
+
+          <h4 style="margin:4px 0">Síguenos</h4>
+          <div class="socials" aria-hidden="true">
+            <a href="#" title="Instagram">IG</a>
+            <a href="#" title="TikTok">TT</a>
+            <a href="#" title="YouTube">YT</a>
+          </div>
+
+          <div style="margin-top:12px" class="muted">¿Quieres una llamada rápida? Déjanos tu número y te llamamos.</div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>Glow & Glam</strong>
+      <div class="muted">© 2025 · Hecho con amor · Política de privacidad</div>
+    </div>
+
+    <div style="display:flex;gap:16px;align-items:center">
+      <div class="muted">Soporte: soporte@glowandglam.fake</div>
+      <div class="muted">Tel: +1 (555) 123-4567</div>
+    </div>
+  </footer>
+
+  <script>
+    // Pequeñas funciones interactivas para mejorar la UX
+    function addToCart(item){
+      const name = item || 'Pack Primavera';
+      alert(name + ' agregado al carrito. ¡Gracias! 🎁');
+    }
+
+    function subscribeMini(){
+      const name = document.getElementById('nombre-mini').value.trim();
+      const email = document.getElementById('email-mini').value.trim();
+      if(!name || !email) { alert('Por favor completa nombre y email.'); return; }
+      alert('¡Gracias ' + name + '! Te hemos reservado el pack y te escribiremos a ' + email + '.');
+      document.getElementById('mini-contact').reset();
+    }
+
+    function updateBudget(v){
+      document.getElementById('budget-value').textContent = '$' + v;
+    }
+
+    function updateEstilo(){
+      // visual feedback opcional
+      const estilo = document.querySelector('input[name="estilo"]:checked').value;
+      const recoText = document.getElementById('reco-text');
+      recoText.textContent = 'Estilo seleccionado: ' + estilo + '. Ajusta tu presupuesto para recomendaciones más precisas.';
+      document.getElementById('reco-list').innerHTML = '';
+    }
+
+    function getRecommendation(){
+      const estilo = document.querySelector('input[name="estilo"]:checked').value;
+      const budget = Number(document.getElementById('budget').value);
+      const list = document.getElementById('reco-list');
+      list.innerHTML = '';
+
+      // Recomendaciones simples basadas en estilo y presupuesto (simulación)
+      let recomendaciones = [];
+      if(estilo === 'natural'){
+        recomendaciones = [
+          {name:'Essentials Diario', price:24.5},
+          {name:'Bálsamo Glow', price:15}
+        ];
+      } else if(estilo === 'glam'){
+        recomendaciones = [
+          {name:'Combo Noche Glam', price:39.99},
+          {name:'Paleta Aurora', price:29.99}
+        ];
+      } else if(estilo === 'romantico'){
+        recomendaciones = [
+          {name:'Trío de Labiales', price:19.5},
+          {name:'Rubor Seda', price:12.99}
+        ];
+      } else {
+        recomendaciones = [
+          {name:'Kit Editorial', price:89},
+          {name:'Spray Fijador', price:14.99}
+        ];
+      }
+
+      const filtradas = recomendaciones.filter(r => r.price <= budget + 10); // un poco de tolerancia
+      if(filtradas.length === 0){
+        list.innerHTML = '<div class="muted">No hay combos dentro de ese presupuesto. Ajusta el rango o visita nuestras ofertas.</div>';
+      } else {
+        filtradas.forEach(r => {
+          const div = document.createElement('div');
+          div.style.display = 'flex';
+          div.style.justifyContent = 'space-between';
+          div.style.alignItems = 'center';
+          div.innerHTML = '<div style="font-weight:700">'+r.name+'</div><div style="color:#444">$'+r.price+'</div>';
+          const btn = document.createElement('button');
+          btn.className = 'btn-ghost';
+          btn.style.marginLeft='8px';
+          btn.textContent = 'Agregar';
+          btn.onclick = ()=> addToCart(r.name);
+          div.appendChild(btn);
+          list.appendChild(div);
+        });
+      }
+    }
+
+    function openCalculator(){
+      const b = Number(document.getElementById('budget').value);
+      const est = document.querySelector('input[name="estilo"]:checked').value;
+      alert('Calculadora rápida:\nEstilo: ' + est + '\nPresupuesto: $' + b + '\nTe recomendamos ver nuestros combos destacados.');
+    }
+
+    function filterSort(mode){
+      alert('Seleccionaste ordenar por: ' + mode + '. (Función demo)');
+    }
+
+    function toggleSaleFilter(){
+      alert('Filtro "Solo combos" activado. (Demo)');
+    }
+
+    function submitForm(){
+      const name = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const servicio = document.getElementById('servicio').value;
+      if(!name || !email || !servicio){
+        alert('Por favor completa los campos obligatorios.');
+        return;
+      }
+      alert('Gracias ' + name + '! Tu solicitud ha sido enviada. Nos pondremos en contacto vía ' + email + ' en menos de 24 horas.');
+      document.getElementById('main-form').reset();
+      // Aquí podrías enviar a un endpoint real con fetch()
+    }
+
+    // Mejora visual: animar entradas al hacer scroll (sencillo)
+    (function(){
+      const observer = new IntersectionObserver(entries=>{
+        for(const e of entries){
+          if(e.isIntersecting){
+            e.target.style.transform = 'translateY(0)';
+            e.target.style.opacity = '1';
+            observer.unobserve(e.target);
+          }
+        }
+      }, {threshold: 0.12});
+      document.querySelectorAll('section, .card, .promo-panel').forEach(el=>{
+        el.style.transition = 'all .6s cubic-bezier(.2,.9,.2,1)';
+        el.style.transform = 'translateY(18px)';
+        el.style.opacity = '0';
+        observer.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
