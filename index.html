@@ -1,422 +1,335 @@
 <!DOCTYPE html> 
 <html lang="es"> 
 <head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>AuraSkin - Belleza Natural</title> 
-<link rel="icon" type="image/png" href="imagenes/logo.png"> 
-<style> 
-body { 
-margin: 0; 
-font-family: Arial, Helvetica, sans-serif; 
-background-color: #fff7f9; 
-color: #333; 
-} 
-/* ENCABEZADO Y MENÚ */ 
-header { 
-background-color: #e7a9b2; 
-padding: 20px; 
-text-align: center; 
-color: white; 
-font-size: 30px; 
-} 
-nav { 
-background-color: #f8cdd0; 
-text-align: center; 
-padding: 10px; 
-} 
-nav a { 
-color: #333; 
-padding: 14px 20px; 
-text-decoration: none; 
-display: inline-block; 
-font-weight: bold; 
-} 
-nav a:hover { 
-background-color: #ffe3e8; 
-} 
- 
-/* SECCIONES */ 
-section { 
-  padding: 40px; 
-} 
- 
-section h2 { 
-  color: #d16b84; 
-} 
- 
-/* IMAGEN PRINCIPAL Y VIDEO */ 
-.hero { 
-  text-align: center; 
-  background-color: #fff0f3; 
-  padding: 30px; 
-} 
- 
-.hero img { 
-  width: 70%; 
-  max-width: 600px; 
-  border-radius: 10px; 
-} 
- 
-video { 
-  width: 70%; 
-  max-width: 600px; 
-  border-radius: 10px; 
-  display: block; 
-  margin: 20px auto; 
-} 
- 
-/* COMBOS Y LISTAS */ 
-.combo { 
-  background-color: #ffeef1; 
-  margin: 20px auto; 
-  padding: 20px; 
-  width: 80%; 
-  border-radius: 10px; 
-} 
- 
-.combo h3 { 
-  color: #b44b63; 
-} 
- 
-.combo p { 
-  margin-bottom: 10px; 
-} 
- 
-.combo img { 
-  width: 100%; 
-  max-width: 250px; 
-  display: block; 
-  margin: 10px auto; 
-  border-radius: 8px; 
-} 
- 
-.combo button {
-background-color: #d16b84; 
-color: white; 
-border: none; 
-padding: 10px 20px; 
-border-radius: 6px; 
-cursor: pointer; 
-} 
-.combo button:hover { 
-background-color: #b44b63; 
-} 
-/* LISTAS */ 
-ul { 
-background-color: #fff0f3; 
-padding: 20px; 
-border-radius: 10px; 
-width: 70%; 
-margin: 20px auto; 
-list-style-type: square; 
-} 
-ul li { 
-margin: 8px 0; 
-} 
-
-/* FORMULARIO */
-.formulario {
-  background-color: #fff0f3;
-  padding: 40px;
-  margin: 40px auto;
-  border-radius: 10px;
-  width: 80%;
-}
-
-.formulario h2 {
-  text-align: center;
-  color: #d16b84;
-  margin-bottom: 30px;
-}
-
-.grupo-formulario {
-  margin-bottom: 20px;
-}
-
-.grupo-formulario label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #b44b63;
-}
-
-.grupo-formulario input,
-.grupo-formulario select,
-.grupo-formulario textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #f8cdd0;
-  border-radius: 6px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
-.grupo-formulario textarea {
-  height: 100px;
-  resize: vertical;
-}
-
-.grupo-checkbox {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.grupo-checkbox input {
-  width: auto;
-  margin-right: 10px;
-}
-
-.boton-enviar {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.boton-enviar button {
-  background-color: #d16b84;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.boton-enviar button:hover {
-  background-color: #b44b63;
-}
-
-/* CONTACTO */ 
-footer { 
-background-color: #f8cdd0; 
-text-align: center; 
-padding: 20px; 
-color: #333; 
-font-size: 16px; 
-} 
-</style> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>AuraSkin - Belleza Natural</title> 
+  <link rel="icon" type="image/png" href="imagenes/logo.png"> 
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head> 
-<body> 
-<!-- ENCABEZADO --> 
-<header> 
-<h1>AuraSkin</h1> 
-<p>Tu belleza natural, nuestra inspiración 💖</p> 
-</header> 
-<!-- NAVEGACIÓN --> 
-<nav> 
-<a href="#inicio">Inicio</a> 
-<a href="#productos">Productos</a> 
-<a href="#promociones">Promociones</a> 
-<a href="#formulario">Formulario</a> 
-<a href="#contacto">Contacto</a> 
-</nav> 
-<!-- SECCIÓN INICIO --> 
-<section id="inicio" class="hero"> 
-<h2>Bienvenida a AuraSkin</h2> 
-<p>Descubre el poder del cuidado natural con AuraSkin. Nuestros productos 
-combinan ciencia y naturaleza para resaltar tu brillo interior y cuidar tu piel con 
-amor.</p>
- <img src="imagenes/crema-facial.jpg" alt="Crema facial AuraSkin"> 
-  <video controls> 
-    <source src="imagenes/video-maquillaje.mp4" type="video/mp4"> 
-    Tu navegador no soporta video HTML. 
-  </video> 
-</section> 
- 
-<!-- SECCIÓN PRODUCTOS --> 
-<section id="productos"> 
-  <h2>Productos Destacados</h2> 
-  <p>Nuestros productos están elaborados con ingredientes naturales como aloe vera, 
-colágeno y aceites esenciales. Perfectos para todo tipo de piel.</p> 
- 
-  <!-- LISTA AGREGADA --> 
-  <h3>Beneficios del uso de productos naturales:</h3> 
-  <ul> 
-    <li>Hidratación profunda sin químicos dañinos.</li> 
-    <li>Ingredientes ecológicos y sostenibles.</li> 
-    <li>Prevención del envejecimiento prematuro.</li> 
-    <li>Reducción de alergias o irritaciones.</li> 
-    <li>Respeto por el medio ambiente y los animales.</li> 
-  </ul> 
- 
-  <!-- PRODUCTOS --> 
-  <div class="combo"> 
-    <h3>Crema Hidratante Nutritiva</h3> 
-    <img src="imagenes/crema-hidratante.jpeg" alt="Crema Hidratante"> 
-    <p>Hidrata profundamente sin dejar sensación grasosa. Ideal para uso 
-diario.</p> 
-    <button>Comprar</button> 
-  </div> 
- 
-  <div class="combo"> 
-    <h3>Sérum Antioxidante</h3> 
-    <img src="imagenes/serum-facial.webp" alt="Serum facial"> 
-    <p>Revitaliza la piel y reduce líneas de expresión gracias a su fórmula con 
-vitamina C.</p> 
-    <button>Comprar</button> 
-  </div> 
-</section> 
- 
-<!-- SECCIÓN PROMOCIONES --> 
-<section id="promociones"> 
-  <h2>Promociones y Combos Especiales 🌸</h2> 
-  <p>Selecciona el combo que más se adapte a ti. Perfectos para regalo o para 
-consentirte.</p> 
- 
-  <div class="combo"> 
-    <h3>Combo Piel Suave</h3> 
-    <img src="imagenes/combo-1.webp" alt="Combo Piel Suave"> 
-    <p>Incluye: Crema hidratante + Jabón natural + Agua micelar.</p> 
-    <p><strong>Precio:</strong> $24.99</p> 
-    <button>Ver más</button> 
-  </div> 
- 
-  <div class="combo"> 
-    <h3>Combo Glow Diario</h3> 
-    <img src="imagenes/combo-2.webp" alt="Combo Glow Diario"> 
-<p>Incluye: Sérum + Protector solar + Tónico facial.</p> 
-<p><strong>Precio:</strong> $29.99</p> 
-<button>Ver más</button> 
-</div> 
-<div class="combo"> 
-<h3>Combo Noche de Spa</h3> 
-<img src="imagenes/combo-3.jpg" alt="Combo Noche de Spa"> 
-<p>Incluye: Mascarilla + Crema nocturna + Exfoliante suave.</p> 
-<p><strong>Precio:</strong> $34.99</p> 
-<button>Ver más</button> 
-</div> 
-</section>
-
-<!-- FORMULARIO DE CONSULTA -->
-<section id="formulario">
-  <div class="formulario">
-    <h2>Formulario de Consulta Personalizada</h2>
-    <form action="registro_maquillaje.php" method="POST" target="_blank">
-      <!-- Campo 1: Nombre completo -->
-      <div class="grupo-formulario">
-        <label for="nombre">Nombre completo *</label>
-        <input type="text" id="nombre" name="nombre" required>
+<body class="bg-light"> 
+  <!-- ENCABEZADO -->
+  <header class="bg-danger bg-opacity-25 text-dark py-3">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold">AuraSkin</h1>
+      <p class="lead">Tu belleza natural, nuestra inspiración <i class="bi bi-heart-fill text-danger"></i></p>
+    </div>
+  </header>
+  
+  <!-- NAVEGACIÓN -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning bg-opacity-25 py-0">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link py-3 px-4 fw-bold text-dark" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link py-3 px-4 fw-bold text-dark" href="#productos">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link py-3 px-4 fw-bold text-dark" href="#promociones">Promociones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link py-3 px-4 fw-bold text-dark" href="#formulario">Formulario</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link py-3 px-4 fw-bold text-dark" href="#contacto">Contacto</a>
+          </li>
+        </ul>
       </div>
-      
-      <!-- Campo 2: Correo electrónico -->
-      <div class="grupo-formulario">
-        <label for="email">Correo electrónico *</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      
-      <!-- Campo 3: Teléfono -->
-      <div class="grupo-formulario">
-        <label for="telefono">Teléfono *</label>
-        <input type="tel" id="telefono" name="telefono" required>
-      </div>
-      
-      <!-- Campo 4: Edad -->
-      <div class="grupo-formulario">
-        <label for="edad">Edad</label>
-        <input type="number" id="edad" name="edad" min="16" max="100">
-      </div>
-      
-      <!-- Campo 5: Tipo de piel -->
-      <div class="grupo-formulario">
-        <label for="tipo_piel">Tipo de piel *</label>
-        <select id="tipo_piel" name="tipo_piel" required>
-          <option value="">Seleccione su tipo de piel</option>
-          <option value="normal">Normal</option>
-          <option value="seca">Seca</option>
-          <option value="grasa">Grasa</option>
-          <option value="mixta">Mixta</option>
-          <option value="sensible">Sensible</option>
-        </select>
-      </div>
-      
-      <!-- Campo 6: Preocupación principal -->
-      <div class="grupo-formulario">
-        <label for="preocupacion">Principal preocupación *</label>
-        <select id="preocupacion" name="preocupacion" required>
-          <option value="">Seleccione su preocupación principal</option>
-          <option value="acne">Acné</option>
-          <option value="arrugas">Arrugas y líneas de expresión</option>
-          <option value="manchas">Manchas y pigmentación</option>
-          <option value="sensibilidad">Sensibilidad e irritación</option>
-          <option value="hidratacion">Falta de hidratación</option>
-          <option value="poros">Poros dilatados</option>
-        </select>
-      </div>
-      
-      <!-- Campo 7: Productos de interés -->
-      <div class="grupo-formulario">
-        <label>Productos de interés</label>
-        <div class="grupo-checkbox">
-          <input type="checkbox" id="interes_1" name="interes[]" value="cremas_hidratantes">
-          <label for="interes_1">Cremas hidratantes</label>
+    </div>
+  </nav>
+  
+  <!-- SECCIÓN INICIO -->
+  <section id="inicio" class="bg-warning bg-opacity-10 py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 text-center">
+          <h2 class="mb-4 text-danger">Bienvenida a AuraSkin</h2>
+          <p class="lead mb-5">Descubre el poder del cuidado natural con AuraSkin. Nuestros productos 
+          combinan ciencia y naturaleza para resaltar tu brillo interior y cuidar tu piel con 
+          amor.</p>
+          
+          <div class="row mb-5">
+            <div class="col-md-8 mx-auto">
+              <img src="imagenes/crema-facial.jpg" alt="Crema facial AuraSkin" class="img-fluid rounded shadow">
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-8 mx-auto">
+              <video controls class="img-fluid rounded shadow">
+                <source src="imagenes/video-maquillaje.mp4" type="video/mp4"> 
+                Tu navegador no soporta video HTML. 
+              </video>
+            </div>
+          </div>
         </div>
-        <div class="grupo-checkbox">
-          <input type="checkbox" id="interes_2" name="interes[]" value="serums">
-          <label for="interes_2">Sérums y concentrados</label>
-        </div>
-        <div class="grupo-checkbox">
-          <input type="checkbox" id="interes_3" name="interes[]" value="limpieza">
-          <label for="interes_3">Productos de limpieza</label>
-        </div>
-        <div class="grupo-checkbox">
-          <input type="checkbox" id="interes_4" name="interes[]" value="proteccion_solar">
-          <label for="interes_4">Protectores solares</label>
-        </div>
-        <div class="grupo-checkbox">
-          <input type="checkbox" id="interes_5" name="interes[]" value="mascarillas">
-          <label for="interes_5">Mascarillas faciales</label>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SECCIÓN PRODUCTOS -->
+  <section id="productos" class="py-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2 class="mb-3 text-danger">Productos Destacados</h2>
+          <p class="lead">Nuestros productos están elaborados con ingredientes naturales como aloe vera, 
+          colágeno y aceites esenciales. Perfectos para todo tipo de piel.</p>
         </div>
       </div>
       
-      <!-- Campo 8: Presupuesto mensual -->
-      <div class="grupo-formulario">
-        <label for="presupuesto">Presupuesto mensual para cuidado de piel</label>
-        <select id="presupuesto" name="presupuesto">
-          <option value="">Seleccione un rango</option>
-          <option value="menos_20">Menos de $20</option>
-          <option value="20_40">$20 - $40</option>
-          <option value="40_60">$40 - $60</option>
-          <option value="mas_60">Más de $60</option>
-        </select>
+      <!-- LISTA AGREGADA -->
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+          <h3 class="mb-3 text-danger">Beneficios del uso de productos naturales:</h3>
+          <ul class="list-group list-group-flush p-4 bg-warning bg-opacity-10 rounded">
+            <li class="list-group-item bg-transparent">Hidratación profunda sin químicos dañinos.</li>
+            <li class="list-group-item bg-transparent">Ingredientes ecológicos y sostenibles.</li>
+            <li class="list-group-item bg-transparent">Prevención del envejecimiento prematuro.</li>
+            <li class="list-group-item bg-transparent">Reducción de alergias o irritaciones.</li>
+            <li class="list-group-item bg-transparent">Respeto por el medio ambiente y los animales.</li>
+          </ul>
+        </div>
       </div>
       
-      <!-- Campo 9: Experiencia previa -->
-      <div class="grupo-formulario">
-        <label for="experiencia">Experiencia previa con productos naturales</label>
-        <textarea id="experiencia" name="experiencia" placeholder="Cuéntanos sobre tu experiencia con productos de cuidado natural..."></textarea>
+      <!-- PRODUCTOS -->
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="p-4 h-100 bg-warning bg-opacity-10 rounded">
+            <h3 class="mb-3 text-danger">Crema Hidratante Nutritiva</h3>
+            <div class="text-center mb-3">
+              <img src="imagenes/crema-hidratante.jpeg" alt="Crema Hidratante" class="img-fluid rounded" style="max-width: 250px;">
+            </div>
+            <p class="mb-3">Hidrata profundamente sin dejar sensación grasosa. Ideal para uso diario.</p>
+            <button class="btn btn-danger">Comprar</button>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="p-4 h-100 bg-warning bg-opacity-10 rounded">
+            <h3 class="mb-3 text-danger">Sérum Antioxidante</h3>
+            <div class="text-center mb-3">
+              <img src="imagenes/serum-facial.webp" alt="Serum facial" class="img-fluid rounded" style="max-width: 250px;">
+            </div>
+            <p class="mb-3">Revitaliza la piel y reduce líneas de expresión gracias a su fórmula con vitamina C.</p>
+            <button class="btn btn-danger">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SECCIÓN PROMOCIONES -->
+  <section id="promociones" class="py-5 bg-warning bg-opacity-10">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2 class="mb-3 text-danger">Promociones y Combos Especiales <i class="bi bi-flower1 text-success"></i></h2>
+          <p class="lead">Selecciona el combo que más se adapte a ti. Perfectos para regalo o para consentirte.</p>
+        </div>
       </div>
       
-      <!-- Campo 10: Consulta específica -->
-      <div class="grupo-formulario">
-        <label for="consulta">Consulta específica *</label>
-        <textarea id="consulta" name="consulta" required placeholder="Describe tu consulta o problema específico..."></textarea>
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="p-4 h-100 bg-warning bg-opacity-10 rounded">
+            <h3 class="mb-3 text-danger">Combo Piel Suave</h3>
+            <div class="text-center mb-3">
+              <img src="imagenes/combo-1.webp" alt="Combo Piel Suave" class="img-fluid rounded" style="max-width: 250px;">
+            </div>
+            <p class="mb-2">Incluye: Crema hidratante + Jabón natural + Agua micelar.</p>
+            <p class="mb-3"><strong>Precio:</strong> $24.99</p>
+            <button class="btn btn-danger">Ver más</button>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4">
+          <div class="p-4 h-100 bg-warning bg-opacity-10 rounded">
+            <h3 class="mb-3 text-danger">Combo Glow Diario</h3>
+            <div class="text-center mb-3">
+              <img src="imagenes/combo-2.webp" alt="Combo Glow Diario" class="img-fluid rounded" style="max-width: 250px;">
+            </div>
+            <p class="mb-2">Incluye: Sérum + Protector solar + Tónico facial.</p>
+            <p class="mb-3"><strong>Precio:</strong> $29.99</p>
+            <button class="btn btn-danger">Ver más</button>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4">
+          <div class="p-4 h-100 bg-warning bg-opacity-10 rounded">
+            <h3 class="mb-3 text-danger">Combo Noche de Spa</h3>
+            <div class="text-center mb-3">
+              <img src="imagenes/combo-3.jpg" alt="Combo Noche de Spa" class="img-fluid rounded" style="max-width: 250px;">
+            </div>
+            <p class="mb-2">Incluye: Mascarilla + Crema nocturna + Exfoliante suave.</p>
+            <p class="mb-3"><strong>Precio:</strong> $34.99</p>
+            <button class="btn btn-danger">Ver más</button>
+          </div>
+        </div>
       </div>
-      
-      <!-- Campo adicional: Suscripción a newsletter -->
-      <div class="grupo-checkbox">
-        <input type="checkbox" id="newsletter" name="newsletter" value="si" checked>
-        <label for="newsletter">Deseo recibir información sobre nuevos productos y promociones</label>
+    </div>
+  </section>
+  
+  <!-- FORMULARIO DE CONSULTA -->
+  <section id="formulario" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="p-5 bg-warning bg-opacity-10 rounded">
+            <h2 class="text-center mb-4 text-danger">Formulario de Consulta Personalizada</h2>
+            <form action="registro_maquillaje.php" method="POST" target="_blank">
+              <div class="row">
+                <!-- Campo 1: Nombre completo -->
+                <div class="col-md-6 mb-3">
+                  <label for="nombre" class="form-label fw-bold text-danger">Nombre completo *</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                
+                <!-- Campo 2: Correo electrónico -->
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label fw-bold text-danger">Correo electrónico *</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+              </div>
+              
+              <div class="row">
+                <!-- Campo 3: Teléfono -->
+                <div class="col-md-6 mb-3">
+                  <label for="telefono" class="form-label fw-bold text-danger">Teléfono *</label>
+                  <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+                
+                <!-- Campo 4: Edad -->
+                <div class="col-md-6 mb-3">
+                  <label for="edad" class="form-label fw-bold text-danger">Edad</label>
+                  <input type="number" class="form-control" id="edad" name="edad" min="16" max="100">
+                </div>
+              </div>
+              
+              <div class="row">
+                <!-- Campo 5: Tipo de piel -->
+                <div class="col-md-6 mb-3">
+                  <label for="tipo_piel" class="form-label fw-bold text-danger">Tipo de piel *</label>
+                  <select class="form-select" id="tipo_piel" name="tipo_piel" required>
+                    <option value="">Seleccione su tipo de piel</option>
+                    <option value="normal">Normal</option>
+                    <option value="seca">Seca</option>
+                    <option value="grasa">Grasa</option>
+                    <option value="mixta">Mixta</option>
+                    <option value="sensible">Sensible</option>
+                  </select>
+                </div>
+                
+                <!-- Campo 6: Preocupación principal -->
+                <div class="col-md-6 mb-3">
+                  <label for="preocupacion" class="form-label fw-bold text-danger">Principal preocupación *</label>
+                  <select class="form-select" id="preocupacion" name="preocupacion" required>
+                    <option value="">Seleccione su preocupación principal</option>
+                    <option value="acne">Acné</option>
+                    <option value="arrugas">Arrugas y líneas de expresión</option>
+                    <option value="manchas">Manchas y pigmentación</option>
+                    <option value="sensibilidad">Sensibilidad e irritación</option>
+                    <option value="hidratacion">Falta de hidratación</option>
+                    <option value="poros">Poros dilatados</option>
+                  </select>
+                </div>
+              </div>
+              
+              <!-- Campo 7: Productos de interés -->
+              <div class="mb-4">
+                <label class="form-label fw-bold text-danger">Productos de interés</label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="interes_1" name="interes[]" value="cremas_hidratantes">
+                      <label class="form-check-label" for="interes_1">Cremas hidratantes</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="interes_2" name="interes[]" value="serums">
+                      <label class="form-check-label" for="interes_2">Sérums y concentrados</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="interes_3" name="interes[]" value="limpieza">
+                      <label class="form-check-label" for="interes_3">Productos de limpieza</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="interes_4" name="interes[]" value="proteccion_solar">
+                      <label class="form-check-label" for="interes_4">Protectores solares</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="interes_5" name="interes[]" value="mascarillas">
+                      <label class="form-check-label" for="interes_5">Mascarillas faciales</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <!-- Campo 8: Presupuesto mensual -->
+                <div class="col-md-6 mb-4">
+                  <label for="presupuesto" class="form-label fw-bold text-danger">Presupuesto mensual para cuidado de piel</label>
+                  <select class="form-select" id="presupuesto" name="presupuesto">
+                    <option value="">Seleccione un rango</option>
+                    <option value="menos_20">Menos de $20</option>
+                    <option value="20_40">$20 - $40</option>
+                    <option value="40_60">$40 - $60</option>
+                    <option value="mas_60">Más de $60</option>
+                  </select>
+                </div>
+              </div>
+              
+              <!-- Campo 9: Experiencia previa -->
+              <div class="mb-4">
+                <label for="experiencia" class="form-label fw-bold text-danger">Experiencia previa con productos naturales</label>
+                <textarea class="form-control" id="experiencia" name="experiencia" rows="3" placeholder="Cuéntanos sobre tu experiencia con productos de cuidado natural..."></textarea>
+              </div>
+              
+              <!-- Campo 10: Consulta específica -->
+              <div class="mb-4">
+                <label for="consulta" class="form-label fw-bold text-danger">Consulta específica *</label>
+                <textarea class="form-control" id="consulta" name="consulta" rows="3" required placeholder="Describe tu consulta o problema específico..."></textarea>
+              </div>
+              
+              <!-- Campo adicional: Suscripción a newsletter -->
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter" value="si" checked>
+                <label class="form-check-label" for="newsletter">Deseo recibir información sobre nuevos productos y promociones</label>
+              </div>
+              
+              <!-- Botón de envío -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-danger btn-lg px-5">Enviar Consulta</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-      
-      <!-- Botón de envío -->
-      <div class="boton-enviar">
-        <button type="submit">Enviar Consulta</button>
-      </div>
-    </form>
-  </div>
-</section>
- 
-<!-- PIE DE PÁGINA --> 
-<footer id="contacto"> 
-<h2>Contacto</h2> 
-<p><strong>Atención al cliente:</strong> Lunes a sábado, 9:00 a 19:00</p> 
-<p><strong>Teléfono:</strong> 0979357856</p> 
-<p><strong>Correo:</strong> jk1207@hotmail.com</p> 
-<p><strong>Dirección:</strong> Av. Primavera 215, Quito, Ecuador</p> 
-<p>© 2025 AuraSkin. Todos los derechos reservados.</p> 
-</footer> 
+    </div>
+  </section>
+  
+  <!-- PIE DE PÁGINA -->
+  <footer id="contacto" class="py-5 text-center bg-warning bg-opacity-25">
+    <div class="container">
+      <h2 class="mb-4">Contacto</h2>
+      <p class="mb-2"><strong>Atención al cliente:</strong> Lunes a sábado, 9:00 a 19:00</p>
+      <p class="mb-2"><strong>Teléfono:</strong> 0979357856</p>
+      <p class="mb-2"><strong>Correo:</strong> jk1207@hotmail.com</p>
+      <p class="mb-4"><strong>Dirección:</strong> Av. Primavera 215, Quito, Ecuador</p>
+      <p class="mb-0">© 2025 AuraSkin. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body> 
 </html>

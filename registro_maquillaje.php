@@ -25,87 +25,84 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Registro Exitoso - AuraSkin</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #fff7f9;
-            color: #333;
-            padding: 40px;
-            text-align: center;
-            margin: 0;
-        }
-        .contenedor-exito {
-            max-width: 700px;
-            margin: 50px auto;
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #d16b84;
-            margin-bottom: 20px;
-        }
-        .resumen {
-            text-align: left;
-            background-color: #fff0f3;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #d16b84;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .btn:hover {
-            background-color: #b44b63;
-        }
-    </style>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
-<body>
-    <div class='contenedor-exito'>
-        <h2>¡Registro Exitoso!</h2>
-        <p>Gracias <strong><?php echo htmlspecialchars($nombre); ?></strong> por contactarnos. Hemos recibido tu información y nos pondremos en contacto contigo pronto.</p>
-        
-        <div class='resumen'>
-            <h3>Resumen de tu consulta:</h3>
-            <p><strong>Nombre:</strong> <?php echo htmlspecialchars($nombre); ?></p>
-            <p><strong>Email:</strong> <?php echo htmlspecialchars($email); ?></p>
-            <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($telefono); ?></p>
-            
-            <?php if (!empty($edad)): ?>
-            <p><strong>Edad:</strong> <?php echo htmlspecialchars($edad); ?></p>
-            <?php endif; ?>
-            
-            <p><strong>Tipo de piel:</strong> <?php echo htmlspecialchars($tipo_piel); ?></p>
-            <p><strong>Preocupación principal:</strong> <?php echo htmlspecialchars($preocupacion); ?></p>
-            <p><strong>Productos de interés:</strong> <?php echo htmlspecialchars($intereses_texto); ?></p>
-            
-            <?php if (!empty($presupuesto)): ?>
-            <p><strong>Presupuesto:</strong> <?php echo htmlspecialchars($presupuesto); ?></p>
-            <?php endif; ?>
-            
-            <?php if (!empty($experiencia)): ?>
-            <p><strong>Experiencia previa:</strong> <?php echo htmlspecialchars($experiencia); ?></p>
-            <?php endif; ?>
-            
-            <p><strong>Consulta:</strong> <?php echo htmlspecialchars($consulta); ?></p>
-            <p><strong>Suscripción a newsletter:</strong> <?php echo htmlspecialchars($newsletter); ?></p>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow border-0">
+                    <div class="card-body p-5">
+                        <!-- Header de éxito -->
+                        <div class="text-center mb-4">
+                            <i class="bi bi-check-circle-fill text-success display-1"></i>
+                            <h2 class="text-danger mt-3">¡Registro Exitoso!</h2>
+                            <p class="lead">Gracias <strong class="text-danger"><?php echo htmlspecialchars($nombre); ?></strong> por contactarnos. Hemos recibido tu información y nos pondremos en contacto contigo pronto.</p>
+                        </div>
+                        
+                        <!-- Resumen de datos -->
+                        <div class="bg-warning bg-opacity-10 rounded p-4 mb-4">
+                            <h3 class="text-danger mb-3">Resumen de tu consulta:</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Nombre:</strong><br><?php echo htmlspecialchars($nombre); ?></p>
+                                    <p><strong>Email:</strong><br><?php echo htmlspecialchars($email); ?></p>
+                                    <p><strong>Teléfono:</strong><br><?php echo htmlspecialchars($telefono); ?></p>
+                                    
+                                    <?php if (!empty($edad)): ?>
+                                    <p><strong>Edad:</strong><br><?php echo htmlspecialchars($edad); ?></p>
+                                    <?php endif; ?>
+                                    
+                                    <p><strong>Tipo de piel:</strong><br><?php echo htmlspecialchars($tipo_piel); ?></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Preocupación principal:</strong><br><?php echo htmlspecialchars($preocupacion); ?></p>
+                                    <p><strong>Productos de interés:</strong><br><?php echo htmlspecialchars($intereses_texto); ?></p>
+                                    
+                                    <?php if (!empty($presupuesto)): ?>
+                                    <p><strong>Presupuesto:</strong><br><?php echo htmlspecialchars($presupuesto); ?></p>
+                                    <?php endif; ?>
+                                    
+                                    <p><strong>Suscripción a newsletter:</strong><br><?php echo htmlspecialchars($newsletter); ?></p>
+                                </div>
+                            </div>
+                            
+                            <?php if (!empty($experiencia)): ?>
+                            <div class="mt-3">
+                                <p><strong>Experiencia previa:</strong><br><?php echo htmlspecialchars($experiencia); ?></p>
+                            </div>
+                            <?php endif; ?>
+                            
+                            <div class="mt-3">
+                                <p><strong>Consulta:</strong><br><?php echo htmlspecialchars($consulta); ?></p>
+                            </div>
+                        </div>
+                        
+                        <!-- Mensaje final -->
+                        <div class="text-center mb-4">
+                            <p class="text-muted">Te contactaremos en un plazo máximo de 24 horas.</p>
+                        </div>
+                        
+                        <!-- Botones de acción -->
+                        <div class="text-center">
+                            <a href='javascript:window.close()' class='btn btn-danger me-3'>
+                                <i class="bi bi-x-circle me-2"></i>Cerrar ventana
+                            </a>
+                            <a href='index.html' class='btn btn-outline-danger'>
+                                <i class="bi bi-arrow-left me-2"></i>Volver al sitio web
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <p>Te contactaremos en un plazo máximo de 24 horas.</p>
-        <a href='javascript:window.close()' class='btn'>Cerrar ventana</a>
-        <a href='index.html' class='btn'>Volver al sitio web</a>
     </div>
+    
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 <?php
@@ -118,44 +115,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Error - AuraSkin</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #fff7f9;
-            color: #333;
-            padding: 40px;
-            text-align: center;
-        }
-        .contenedor-error {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #d16b84;
-            margin-bottom: 20px;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #d16b84;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-    </style>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
-<body>
-    <div class='contenedor-error'>
-        <h2>Error: Acceso no permitido</h2>
-        <p>Esta página solo puede accederse mediante el envío del formulario.</p>
-        <a href='index.html' class='btn'>Volver al sitio web</a>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card shadow border-0">
+                    <div class="card-body p-5 text-center">
+                        <i class="bi bi-exclamation-triangle-fill text-warning display-1"></i>
+                        <h2 class="text-danger mt-3">Error: Acceso no permitido</h2>
+                        <p class="lead mb-4">Esta página solo puede accederse mediante el envío del formulario.</p>
+                        <a href='index.html' class='btn btn-danger'>
+                            <i class="bi bi-arrow-left me-2"></i>Volver al sitio web
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 <?php
