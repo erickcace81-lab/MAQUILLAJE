@@ -25,86 +25,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Registro Exitoso - AuraSkin</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #fff7f9;
-            color: #333;
-            padding: 40px;
-            text-align: center;
-            margin: 0;
-        }
-        .contenedor-exito {
-            max-width: 700px;
-            margin: 50px auto;
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #d16b84;
-            margin-bottom: 20px;
-        }
-        .resumen {
-            text-align: left;
-            background-color: #fff0f3;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #d16b84;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .btn:hover {
-            background-color: #b44b63;
-        }
-    </style>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class='contenedor-exito'>
-        <h2>¡Registro Exitoso!</h2>
-        <p>Gracias <strong><?php echo htmlspecialchars($nombre); ?></strong> por contactarnos. Hemos recibido tu información y nos pondremos en contacto contigo pronto.</p>
+<body class="bg-pink-50 py-12 px-4">
+    <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12">
+        <h2 class="text-3xl font-bold text-pink-600 mb-6 text-center">¡Registro Exitoso!</h2>
+        <p class="text-lg mb-6 text-center">Gracias <strong class="text-pink-700"><?php echo htmlspecialchars($nombre); ?></strong> por contactarnos. Hemos recibido tu información y nos pondremos en contacto contigo pronto.</p>
         
-        <div class='resumen'>
-            <h3>Resumen de tu consulta:</h3>
-            <p><strong>Nombre:</strong> <?php echo htmlspecialchars($nombre); ?></p>
-            <p><strong>Email:</strong> <?php echo htmlspecialchars($email); ?></p>
-            <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($telefono); ?></p>
-            
-            <?php if (!empty($edad)): ?>
-            <p><strong>Edad:</strong> <?php echo htmlspecialchars($edad); ?></p>
-            <?php endif; ?>
-            
-            <p><strong>Tipo de piel:</strong> <?php echo htmlspecialchars($tipo_piel); ?></p>
-            <p><strong>Preocupación principal:</strong> <?php echo htmlspecialchars($preocupacion); ?></p>
-            <p><strong>Productos de interés:</strong> <?php echo htmlspecialchars($intereses_texto); ?></p>
-            
-            <?php if (!empty($presupuesto)): ?>
-            <p><strong>Presupuesto:</strong> <?php echo htmlspecialchars($presupuesto); ?></p>
-            <?php endif; ?>
-            
-            <?php if (!empty($experiencia)): ?>
-            <p><strong>Experiencia previa:</strong> <?php echo htmlspecialchars($experiencia); ?></p>
-            <?php endif; ?>
-            
-            <p><strong>Consulta:</strong> <?php echo htmlspecialchars($consulta); ?></p>
-            <p><strong>Suscripción a newsletter:</strong> <?php echo htmlspecialchars($newsletter); ?></p>
+        <div class="bg-pink-100 rounded-lg p-6 mb-8">
+            <h3 class="text-xl font-bold text-pink-700 mb-4">Resumen de tu consulta:</h3>
+            <div class="space-y-3">
+                <p><strong class="text-pink-700">Nombre:</strong> <?php echo htmlspecialchars($nombre); ?></p>
+                <p><strong class="text-pink-700">Email:</strong> <?php echo htmlspecialchars($email); ?></p>
+                <p><strong class="text-pink-700">Teléfono:</strong> <?php echo htmlspecialchars($telefono); ?></p>
+                
+                <?php if (!empty($edad)): ?>
+                <p><strong class="text-pink-700">Edad:</strong> <?php echo htmlspecialchars($edad); ?></p>
+                <?php endif; ?>
+                
+                <p><strong class="text-pink-700">Tipo de piel:</strong> <?php echo htmlspecialchars($tipo_piel); ?></p>
+                <p><strong class="text-pink-700">Preocupación principal:</strong> <?php echo htmlspecialchars($preocupacion); ?></p>
+                <p><strong class="text-pink-700">Productos de interés:</strong> <?php echo htmlspecialchars($intereses_texto); ?></p>
+                
+                <?php if (!empty($presupuesto)): ?>
+                <p><strong class="text-pink-700">Presupuesto:</strong> <?php echo htmlspecialchars($presupuesto); ?></p>
+                <?php endif; ?>
+                
+                <?php if (!empty($experiencia)): ?>
+                <p><strong class="text-pink-700">Experiencia previa:</strong> <?php echo htmlspecialchars($experiencia); ?></p>
+                <?php endif; ?>
+                
+                <p><strong class="text-pink-700">Consulta:</strong> <?php echo htmlspecialchars($consulta); ?></p>
+                <p><strong class="text-pink-700">Suscripción a newsletter:</strong> <?php echo htmlspecialchars($newsletter); ?></p>
+            </div>
         </div>
         
-        <p>Te contactaremos en un plazo máximo de 24 horas.</p>
-        <a href='javascript:window.close()' class='btn'>Cerrar ventana</a>
-        <a href='index.html' class='btn'>Volver al sitio web</a>
+        <p class="text-center mb-6">Te contactaremos en un plazo máximo de 24 horas.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href='javascript:window.close()' class='bg-pink-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-pink-600 transition text-center'>Cerrar ventana</a>
+            <a href='index.html' class='bg-pink-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-pink-600 transition text-center'>Volver al sitio web</a>
+        </div>
     </div>
 </body>
 </html>
@@ -118,43 +79,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Error - AuraSkin</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #fff7f9;
-            color: #333;
-            padding: 40px;
-            text-align: center;
-        }
-        .contenedor-error {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #d16b84;
-            margin-bottom: 20px;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #d16b84;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-    </style>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class='contenedor-error'>
-        <h2>Error: Acceso no permitido</h2>
-        <p>Esta página solo puede accederse mediante el envío del formulario.</p>
-        <a href='index.html' class='btn'>Volver al sitio web</a>
+<body class="bg-pink-50 py-12 px-4">
+    <div class="max-w-lg mx-auto bg-white rounded-xl shadow-lg p-8 text-center">
+        <h2 class="text-2xl font-bold text-pink-600 mb-4">Error: Acceso no permitido</h2>
+        <p class="mb-6">Esta página solo puede accederse mediante el envío del formulario.</p>
+        <a href='index.html' class='bg-pink-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-pink-600 transition inline-block'>Volver al sitio web</a>
     </div>
 </body>
 </html>
